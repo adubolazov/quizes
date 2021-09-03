@@ -40,7 +40,7 @@ public class ComponentDetector {
         } else if (mergedComponents.size() > 1) {
             Component prime = mergedComponents.get(0);
             mergedComponents.stream().skip(1).forEach(c -> {
-                prime.accure(c);
+                prime.merge(c);
                 components.remove(c);
             });
         }

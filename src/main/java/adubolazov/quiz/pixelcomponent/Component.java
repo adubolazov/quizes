@@ -20,7 +20,7 @@ public class Component {
         pixels.add(pixel);
     }
 
-    public void accure(Component other) {
+    public void merge(Component other) {
         pixels.addAll(other.getPixels());
     }
 }
