@@ -3,6 +3,8 @@ package adubolazov.quiz.pixelcomponent;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
 public class ComponentDetector {
     
     private ComponentDetector() {
@@ -13,7 +15,7 @@ public class ComponentDetector {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         } else if (matrix.length > 100000 || matrix[0].length > 100000) {
-            throw new RuntimeException("Matrix exeeds the size limit") ;
+            throw new IllegalArgumentException("Matrix exeeds the size limit") ;
         } else {
             List<Component> components = new ArrayList<>();
             for(int i = 0; i < matrix.length; i++) {
@@ -27,7 +29,7 @@ public class ComponentDetector {
         }
     }
 
-    private static void checkPixel(Pixel pixel, List<Component> components) {
+    private static void checkPixel(@NotNull Pixel pixel, @NotNull List<Component> components) {
         List<Component> mergedComponents = new ArrayList<>();
         components.forEach(c -> {
             if (c.getPixels().stream().anyMatch(p -> p.isNeighbor(pixel))) {

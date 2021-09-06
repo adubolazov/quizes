@@ -17,6 +17,6 @@ public class ComponentDetectorTest {
         assertEquals(2, ComponentDetector.getComponentsCount(M_2_COMPONENTS_CASE_1));
         assertEquals(2, ComponentDetector.getComponentsCount(M_2_COMPONENTS_CASE_2));
         assertEquals(4, ComponentDetector.getComponentsCount(M_4_COMPONENTS));
+        assertEquals(0, ComponentDetector.getComponentsCount(null));
     }
-
 }
